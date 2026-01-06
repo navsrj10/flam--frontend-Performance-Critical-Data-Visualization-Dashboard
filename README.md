@@ -1,4 +1,4 @@
-# ⚡ FLAM Performance Dashboard
+#  FLAM Performance Dashboard
 
 A **real-time performance visualization dashboard** built using **Next.js 14 (App Router)** and **TypeScript**, designed to render and update **10,000+ data points at 60 FPS** without freezing.
 
@@ -6,7 +6,7 @@ This project simulates live streaming telemetry data (like system metrics or net
 
 ---
 
-## 📋 Overview
+##  Overview
 
 This dashboard demonstrates:
 - High-FPS, smooth data visualization
@@ -17,9 +17,9 @@ This dashboard demonstrates:
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-### 1️⃣ Clone and install
+###  Clone and install
 
 ```bash
 git clone https://github.com/your-username/flam-performance-dashboard.git
@@ -27,16 +27,16 @@ cd flam-performance-dashboard
 npm install        # or: yarn install / pnpm install
 
 
-2️⃣ Run locally
+2️ Run locally
 npm run dev
 
 
 
-3️⃣ Build for production
+3️ Build for production
 npm run build
 npm start
 
-🧩 Features
+ Features
 Feature	Description
 Real-time Updates	Data points generated every 100ms
 Canvas Rendering	Fast, memory-efficient custom drawing
@@ -47,7 +47,7 @@ Zoomable Overlay	Expand any chart on click or hover
 Performance Monitor	Live FPS counter & performance check
 Responsive Layout	Works on desktop, tablet, and mobile
 No External Chart Libraries	100% custom implementation
-🧠 Architecture
+ Architecture
 app/
   dashboard/page.tsx         # Main dashboard page
 components/
@@ -71,7 +71,7 @@ lib/
 styles/
   globals.css                # Dashboard layout and theme
 
-📊 Data Simulation
+ Data Simulation
 
 The DataProvider continuously emits synthetic data points like this:
 
@@ -84,7 +84,7 @@ const latest = data[data.length - 1]?.t ?? 0;
 const windowMs = { live: 60000, '1m': 60000, '5m': 300000, '1h': 3600000 }[range];
 const filtered = data.filter(d => d.t >= latest - windowMs);
 
-📈 KPI Metrics (useKpis.ts)
+ KPI Metrics (useKpis.ts)
 Metric	Formula / Meaning
 Throughput	Data points per second
 Latency (p95)	95th percentile of values
@@ -98,7 +98,7 @@ const p95 = 42;         // ms
 const active = 320;     // users
 const errRate = 0.7;    // %
 
-🧭 Controls
+ Controls
 
 Time range buttons: LIVE / 1M / 5M / 1H
 
@@ -108,7 +108,7 @@ Chart overlay: Click a chart to zoom into full-screen view
 
 FPS Monitor: Top-right corner (PerformanceMonitor)
 
-🎨 Zoom Overlay Behavior
+ Zoom Overlay Behavior
 
 Hover or click a chart to open it in a modal overlay (ZoomableCard.tsx).
 
@@ -116,7 +116,7 @@ Overlay does not affect the grid layout — it’s rendered using createPortal o
 
 Background blur + close button for an immersive experience.
 
-⚠️ If charts vertically expand the page, ensure you’ve copied the CSS fix:
+ If charts vertically expand the page, ensure you’ve copied the CSS fix:
 
 .zoom-card {
   height: 100%;
@@ -132,17 +132,17 @@ State Mgmt	React Context + custom hooks
 Data Source	Synthetic time-series generator
 Styling	CSS Modules / Tailwind-like utility classes
 Performance	Memoized draws, windowing, FPS monitor
-📊 Performance Targets
+ Performance Targets
 
-✅ 60 FPS during real-time updates
+- 60 FPS during real-time updates
 
-✅ <100ms UI response latency
+- <100ms UI response latency
 
-✅ 10,000+ points without UI freeze
+- 10,000+ points without UI freeze
 
-✅ No memory leaks during continuous streaming
+- No memory leaks during continuous streaming
 
-🧪 Performance Hints
+ Performance Hints
 
 Use useMemo for filtered datasets.
 
@@ -152,7 +152,7 @@ Lock canvas sizes to prevent re-layout.
 
 Disable expensive gradients or shadows if FPS drops.
 
-🖌️ Theming
+ Theming
 
 Supports dark mode by default.
 You can easily change the palette in globals.css or your theme provider.
@@ -164,7 +164,7 @@ body {
   color: #eaeefb;
 }
 
-🧾 Scripts
+ Scripts
 {
   "scripts": {
     "dev": "next dev -p 3000",
